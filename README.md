@@ -14,7 +14,9 @@ __In essence, the combination of YOLOv5 and DeepSort in this project enables rob
 
 # Watch Demo:
 
+[Link to YOLOv5 + DeepSORT Project](https://www.linkedin.com/posts/shehryar-gondal-data-analyst_deeplearning-datascience-data-activity-7104509187946086400-w0n1?utm_source=share&utm_medium=member_desktop)
 
+<br>
 
 ### Setting up Project Environment :
 
@@ -79,7 +81,7 @@ Make sure you are in the project directory and the Conda environment is activate
 In __detect.py__ , all the things remain same as in yolov5/detect.py , the main thing change in this code is applying __Deepsort Algorithm__ that help to detect each frame using __Kalman filter__ <br>
 
 ```
-  cfg = get_config()
+cfg = get_config()
     cfg.merge_from_file(opt.config_deepsort)
     deepsort = DeepSort(cfg.DEEPSORT.REID_CKPT,
                         max_dist=cfg.DEEPSORT.MAX_DIST, min_confidence=cfg.DEEPSORT.MIN_CONFIDENCE,
