@@ -76,8 +76,9 @@ Make sure you are in the project directory and the Conda environment is activate
 
 ### Important Things to Notice:
 
-In __detect.py__ , all the things remain same as in yolov5/detect.py , the main thing change in this code is applying __Deepsort Algorithm__ that help to detect each frame using __Kalman filter__ 
-'''
+In __detect.py__ , all the things remain same as in yolov5/detect.py , the main thing change in this code is applying __Deepsort Algorithm__ that help to detect each frame using __Kalman filter__ <br>
+
+```
   cfg = get_config()
     cfg.merge_from_file(opt.config_deepsort)
     deepsort = DeepSort(cfg.DEEPSORT.REID_CKPT,
@@ -85,8 +86,8 @@ In __detect.py__ , all the things remain same as in yolov5/detect.py , the main 
                         nms_max_overlap=cfg.DEEPSORT.NMS_MAX_OVERLAP, max_iou_distance=cfg.DEEPSORT.MAX_IOU_DISTANCE,
                         max_age=cfg.DEEPSORT.MAX_AGE, n_init=cfg.DEEPSORT.N_INIT, nn_budget=cfg.DEEPSORT.NN_BUDGET,
                         use_cuda=True)
-
-'''
+```
+<br>
 
 This code snippet configures and initializes the DeepSort tracking algorithm. Here's a breakdown of what it does:
 
@@ -107,6 +108,7 @@ This code snippet configures and initializes the DeepSort tracking algorithm. He
 - use_cuda=True: This flag indicates that DeepSort should utilize GPU acceleration if available, which can significantly speed up the tracking process.
 
 __In summary, this code is responsible for configuring and initializing the DeepSort tracker, setting various tracking parameters, and potentially loading a pre-trained model checkpoint for re-identification. DeepSort is a critical component in object tracking systems and helps maintain the continuity of object tracking across video frames.__
+
 
 ### AUTHOR
 <hr>
